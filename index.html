@@ -1,8 +1,552 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
   <head>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Petite Maison — Massages bien-être</title>
+    <meta
+      name="description"
+      content="La Petite Maison, salon de massage bien-être. Massages californien, thaï, balinais et sur mesure."
+    />
+    <style>
+      :root {
+        --bg: #f6f1ea;
+        --bg-soft: #efe7de;
+        --text: #2c241f;
+        --muted: #6e6158;
+        --line: #d8ccc1;
+        --accent: #8a6a52;
+        --accent-dark: #6f523f;
+        --card: #fffaf5;
+        --shadow: 0 10px 30px rgba(44, 36, 31, 0.08);
+        --radius: 20px;
+        --container: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(calc(100% - 32px), var(--container));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+      }
+
+      h1, h2, h3 {
+        margin: 0 0 16px;
+        line-height: 1.15;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4.8rem);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        margin: 0 0 16px;
+        color: var(--muted);
+      }
+
+      .btn-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-dark);
+      }
+
+      .btn-secondary {
+        border-color: var(--line);
+        background: transparent;
+      }
+
+      .btn-secondary:hover {
+        background: var(--bg-soft);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(12px);
+        background: rgba(246, 241, 234, 0.84);
+        border-bottom: 1px solid rgba(138, 106, 82, 0.08);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: 72px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--card);
+        border: 1px solid var(--line);
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .hero {
+        padding: 56px 0 48px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .hero-card,
+      .card,
+      .photo-block {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-copy {
+        padding: 24px 0;
+      }
+
+      .hero-copy p {
+        max-width: 620px;
+        font-size: 1.08rem;
+      }
+
+      .hero-visual {
+        padding: 18px;
+      }
+
+      .hero-visual img {
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .hero-note {
+        margin-top: 14px;
+        font-size: 0.95rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .card {
+        padding: 26px;
+      }
+
+      .services .card p:last-child,
+      .about .card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .pricing-card {
+        padding: 30px;
+      }
+
+      .price {
+        font-size: 2rem;
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", serif;
+        margin-bottom: 6px;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr 0.9fr;
+        gap: 18px;
+      }
+
+      .photo-block {
+        overflow: hidden;
+        min-height: 260px;
+      }
+
+      .photo-block img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .photo-placeholder {
+        width: 100%;
+        height: 100%;
+        min-height: 260px;
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        padding: 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #f8f2ec 0%, #ece2d8 100%);
+      }
+
+      .quote {
+        font-size: 1.15rem;
+        color: var(--text);
+      }
+
+      .contact-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+        color: var(--muted);
+      }
+
+      .contact-item strong {
+        display: block;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      footer {
+        padding: 32px 0 56px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--line);
+        margin: 0 0 24px;
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid,
+        .grid-3,
+        .grid-2,
+        .contact-box,
+        .photo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 28px;
+        }
+
+        .section {
+          padding: 56px 0;
+        }
+      }
+    </style>
   </head>
   <body>
-    <p>Test</p>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#top">
+          <div class="brand-mark">
+            <img src="images/logo.jpg" alt="Logo La Petite Maison" />
+          </div>
+          <span>La Petite Maison</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#massages">Massages</a>
+          <a href="#lieu">Le lieu</a>
+          <a href="#apropos">À propos</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-primary" href="#contact">Réserver</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Salon de massage bien-être</span>
+            <h1>Un lieu calme, simple et chaleureux pour prendre soin de vous.</h1>
+            <p>
+              À La Petite Maison, je propose des massages bien-être sur mesure dans un cadre intime et apaisant.
+              Californien, thaï, balinais ou mélange personnalisé selon vos besoins du moment.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#contact">Prendre rendez-vous</a>
+              <a class="btn btn-secondary" href="#massages">Découvrir les massages</a>
+            </div>
+            <p class="hero-note">
+              Ambiance douce, accueil attentionné, approche simple et sans folklore.
+            </p>
+          </div>
+
+          <div class="hero-card hero-visual">
+            <img src="images/hero.jpg" alt="Photo du salon La Petite Maison" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section about">
+        <div class="container grid-3">
+          <div class="card">
+            <h3>Des massages adaptés</h3>
+            <p>
+              Chaque séance s'ajuste à votre état du jour, à vos tensions, à votre énergie et à vos préférences.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Un cadre intime</h3>
+            <p>
+              Un lieu à taille humaine, pensé pour ralentir, respirer et se déposer loin du rythme quotidien.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Une approche claire</h3>
+            <p>
+              Des soins bien-être accessibles, professionnels et chaleureux, avec une esthétique sobre et naturelle.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="massages">
+        <div class="container">
+          <span class="eyebrow">Les massages</span>
+          <h2>Des techniques classiques, une séance pensée pour vous.</h2>
+          <p>
+            Vous pouvez choisir un style précis ou simplement venir avec votre besoin du moment pour un massage sur mesure.
+          </p>
+          <div class="grid-2" style="margin-top: 28px;">
+            <div class="card">
+              <h3>Californien</h3>
+              <p>
+                Enveloppant, fluide et relaxant. Idéal pour relâcher les tensions et retrouver une sensation globale d'apaisement.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Thaï</h3>
+              <p>
+                Plus dynamique, avec mobilisations et pressions. Adapté quand le corps a besoin d'espace, d'ancrage et de relance.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Balinais</h3>
+              <p>
+                Un massage rythmé et profond, mêlant détente et tonicité, pour dénouer et revitaliser en même temps.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Sur mesure</h3>
+              <p>
+                Une combinaison personnalisée de techniques selon vos envies : détente, récupération, recentrage ou besoin ciblé.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="lieu">
+        <div class="container">
+          <span class="eyebrow">Le lieu</span>
+          <h2>Un espace chaleureux, à votre image.</h2>
+          <p>
+            Vous pourrez ajouter ici des photos du salon, de la salle de massage, des détails de décoration et de l'ambiance générale.
+          </p>
+          <div class="photo-grid" style="margin-top: 28px;">
+            <div class="photo-block">
+              <div class="photo-placeholder">Photo principale du lieu</div>
+            </div>
+            <div class="photo-block">
+              <div class="photo-placeholder">Détail / ambiance</div>
+            </div>
+            <div class="photo-block">
+              <div class="photo-placeholder">Photo de vous</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="apropos">
+        <div class="container grid-2">
+          <div>
+            <span class="eyebrow">À propos</span>
+            <h2>Une présence simple, attentive et professionnelle.</h2>
+            <p>
+              Cette section pourra être ajustée avec votre parcours, votre manière de travailler, vos formations et ce que vous souhaitez transmettre.
+            </p>
+            <p>
+              L'idée ici est de mettre en avant un positionnement humain, rassurant et authentique, sans ton trop médical ni ésotérique.
+            </p>
+          </div>
+          <div class="card">
+            <p class="quote">
+              “Je vous accueille dans un cadre calme pour un massage pensé comme un vrai temps de pause, de relâchement et de présence à soi.”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tarifs">
+        <div class="container">
+          <span class="eyebrow">Tarifs</span>
+          <h2>Une grille simple et lisible.</h2>
+          <div class="grid-3" style="margin-top: 28px;">
+            <div class="card pricing-card">
+              <div class="price">60 min</div>
+              <p>À compléter avec votre tarif</p>
+            </div>
+            <div class="card pricing-card">
+              <div class="price">90 min</div>
+              <p>À compléter avec votre tarif</p>
+            </div>
+            <div class="card pricing-card">
+              <div class="price">Carte cadeau</div>
+              <p>Ajout possible plus tard</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact-box">
+          <div>
+            <span class="eyebrow">Contact & réservation</span>
+            <h2>Prendre rendez-vous</h2>
+            <p>
+              Vous pouvez remplacer cette section par un lien de réservation, un formulaire, WhatsApp, Instagram ou vos coordonnées directes.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="mailto:bonjour@lapetitemaison.fr">Envoyer un email</a>
+              <a class="btn btn-secondary" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Adresse</strong>
+                À compléter
+              </div>
+              <div class="contact-item">
+                <strong>Horaires</strong>
+                À compléter
+              </div>
+              <div class="contact-item">
+                <strong>Téléphone</strong>
+                À compléter
+              </div>
+              <div class="contact-item">
+                <strong>Réservation</strong>
+                Lien Calendly / Fresha / Picktime à intégrer
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="divider"></div>
+        <p>© La Petite Maison — Massage bien-être</p>
+      </div>
+    </footer>
   </body>
 </html>

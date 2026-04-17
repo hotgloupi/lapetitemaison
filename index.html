@@ -8,6 +8,7 @@
       name="description"
       content="La Petite Maison, salon de massage bien-être. Massages californien, thaï, balinais et sur mesure."
     />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
       :root {
         --bg: #ffffff;
@@ -70,7 +71,7 @@
       h1, h2, h3 {
         margin: 0 0 16px;
         line-height: 1.15;
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Cormorant", "Times New Roman", serif;
       }
 
       h1 {
@@ -149,7 +150,10 @@
         align-items: center;
         gap: 12px;
         font-weight: 700;
+        font-family: "Cormorant", "Times New Roman", serif;
+        font-size: 2rem;
       }
+
 
       .brand-mark {
         width: 42px;
@@ -179,6 +183,17 @@
 
       .hero {
         padding: 56px 0 48px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        //background: url('images/logo.png') top left / 70% no-repeat;
+        opacity: 0.1;
+        pointer-events: none;
       }
 
       .hero-grid {
@@ -363,21 +378,20 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <img src="images/logo.png" alt="Logo La Petite Maison" style="width:120px;margin-bottom:20px;opacity:0.9;" />
             <span class="eyebrow">Salon de massage bien-être</span>
-            <h1>Un lieu calme, simple et lumineux pour prendre soin de vous.</h1>
+            <h1>Des massages professionnels dans un cadre calme et soigné.</h1>
             <p>
-              À La Petite Maison, je propose des massages bien-être sur mesure dans un cadre intime et apaisant.
-              Californien, thaï, balinais ou mélange personnalisé selon vos besoins du moment.
+              La Petite Maison propose une sélection de massages bien-être réalisés avec attention, précision et simplicité.
+              Une approche sobre, centrée sur la qualité du soin, le confort et l'écoute de vos besoins.
             </p>
-            <div class="btn-row">
+            
             <p class="hero-note">
-              Ambiance douce, accueil attentionné, approche simple et sans folklore.
+              Californien, thaï, balinais, suédois, Lomi Lomi, réflexologie plantaire thaï et massages sur mesure.
             </p>
           </div>
 
           <div class="hero-card hero-visual">
-            <img src="images/hero.jpg" alt="Photo du salon La Petite Maison" />
+            <img src="images/logo.png" alt="Photo du salon La Petite Maison" />
           </div>
         </div>
       </section>
@@ -414,27 +428,45 @@
           </p>
           <div class="grid-2" style="margin-top: 28px;">
             <div class="card">
-              <h3>Californien</h3>
+              <h3>Massage californien</h3>
               <p>
-                Enveloppant, fluide et relaxant. Idéal pour relâcher les tensions et retrouver une sensation globale d'apaisement.
+                Massage enveloppant et progressif, axé sur le relâchement général. Il convient particulièrement aux personnes qui recherchent une séance fluide, calme et profondément relaxante.
               </p>
             </div>
             <div class="card">
-              <h3>Thaï</h3>
+              <h3>Massage thaï</h3>
               <p>
-                Plus dynamique, avec mobilisations et pressions. Adapté quand le corps a besoin d'espace, d'ancrage et de relance.
+                Travail plus rythmé, associant pressions, étirements et mobilisations. Adapté pour améliorer la circulation, délier le corps et retrouver de l'amplitude.
               </p>
             </div>
             <div class="card">
-              <h3>Balinais</h3>
+              <h3>Massage balinais</h3>
               <p>
-                Un massage rythmé et profond, mêlant détente et tonicité, pour dénouer et revitaliser en même temps.
+                Soin complet mêlant profondeur, tonicité et détente. Il permet de dénouer les tensions tout en conservant une sensation de fluidité et d'équilibre.
               </p>
             </div>
             <div class="card">
-              <h3>Sur mesure</h3>
+              <h3>Massage suédois</h3>
               <p>
-                Une combinaison personnalisée de techniques selon vos envies : détente, récupération, recentrage ou besoin ciblé.
+                Massage structuré, orienté sur les muscles et la récupération corporelle. Recommandé pour les tensions installées, la fatigue physique ou après un effort soutenu.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Lomi Lomi</h3>
+              <p>
+                Massage ample et continu, réalisé avec des mouvements longs et enveloppants. Il favorise une détente profonde et une sensation de relâchement global.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Réflexologie plantaire thaï</h3>
+              <p>
+                Travail ciblé sur les pieds et les zones réflexes, combinant pressions et stimulation. Idéal pour procurer une détente rapide, alléger les jambes et recentrer les appuis.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Massage sur mesure</h3>
+              <p>
+                Une séance construite à partir de plusieurs techniques, en fonction de votre état du jour, des zones à privilégier et de l'intensité recherchée.
               </p>
             </div>
           </div>
@@ -444,19 +476,16 @@
       <section class="section" id="lieu">
         <div class="container">
           <span class="eyebrow">Le lieu</span>
-          <h2>Un espace chaleureux, à votre image.</h2>
-          <p>
-            Vous pourrez ajouter ici des photos du salon, de la salle de massage, des détails de décoration et de l'ambiance générale.
-          </p>
+          <h2>Un espace simple et chaleureux</h2>
           <div class="photo-grid" style="margin-top: 28px;">
             <div class="photo-block">
-              <div class="photo-placeholder">Photo principale du lieu</div>
+              <div class="photo-placeholder"><img src="images/modele1.jpg" alt="Photo du salon La Petite Maison" /></div>
             </div>
             <div class="photo-block">
-              <div class="photo-placeholder">Détail / ambiance</div>
+              <div class="photo-placeholder"><img src="images/table1.jpg" alt="Photo du salon La Petite Maison" /></div>
             </div>
             <div class="photo-block">
-              <div class="photo-placeholder">Photo de vous</div>
+              <div class="photo-placeholder"><img src="images/self.jpg" alt="Photo du salon La Petite Maison" /></div>
             </div>
           </div>
         </div>
@@ -466,17 +495,17 @@
         <div class="container grid-2">
           <div>
             <span class="eyebrow">À propos</span>
-            <h2>Une présence simple, attentive et professionnelle.</h2>
+            <h2>Une approche adaptée, centrée sur le besoin réel</h2>
             <p>
-              Cette section pourra être ajustée avec votre parcours, votre manière de travailler, vos formations et ce que vous souhaitez transmettre.
-            </p>
-            <p>
-              L'idée ici est de mettre en avant un positionnement humain, rassurant et authentique, sans ton trop médical ni ésotérique.
+Formé à l’école Azenday et issu d’une reconversion, je pratique le massage depuis une dizaine d’années. Mon approche repose sur une base technique solide et une adaptation précise à chaque personne.
+             </p>
+             <p>
+Chaque séance est construite en fonction de votre état du moment : tensions musculaires, fatigue, besoin de récupération ou recherche de relâchement. L’objectif est simple — proposer un massage cohérent, utile et ajusté, plutôt qu’un protocole standard.            </p>
             </p>
           </div>
           <div class="card">
             <p class="quote">
-              “Je vous accueille dans un cadre calme pour un massage pensé comme un vrai temps de pause, de relâchement et de présence à soi.”
+              "Je vous accueille dans un espace calme, lumineux et à taille humaine. L’approche est volontairement sobre, sans dimension rituelle ou symbolique, avec une attention portée à la qualité du geste et à l’efficacité du soin."
             </p>
           </div>
         </div>
@@ -488,16 +517,15 @@
           <h2>Une grille simple et lisible.</h2>
           <div class="grid-3" style="margin-top: 28px;">
             <div class="card pricing-card">
-              <div class="price">60 min</div>
-              <p>À compléter avec votre tarif</p>
+              <div class="price">70 € / 60 min</div>
             </div>
             <div class="card pricing-card">
-              <div class="price">90 min</div>
-              <p>À compléter avec votre tarif</p>
+              <div class="price">100 € / 90 min</div>
             </div>
+
             <div class="card pricing-card">
               <div class="price">Carte cadeau</div>
-              <p>Ajout possible plus tard</p>
+              <p align="right">Contactez moi!</p>
             </div>
           </div>
         </div>
@@ -509,30 +537,36 @@
             <span class="eyebrow">Contact & réservation</span>
             <h2>Prendre rendez-vous</h2>
             <p>
-              Vous pouvez remplacer cette section par un lien de réservation, un formulaire, WhatsApp, Instagram ou vos coordonnées directes.
+              Vous pouvez me réserver par WhatsApp ou Instagram, ou me téléphoner pour toute question ou demande de renseignement.
             </p>
-            <div class="btn-row">
-              <a class="btn btn-primary" href="mailto:bonjour@lapetitemaison.fr">Envoyer un email</a>
-              <a class="btn btn-secondary" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-            </div>
+
           </div>
           <div class="card">
             <div class="contact-list">
               <div class="contact-item">
                 <strong>Adresse</strong>
-                À compléter
+                <a href="https://maps.app.goo.gl/XLJrqMPyY1cSbVk67" target="_blank">61 rue Désiré Chevalier, 93100 Montreuil</a>
               </div>
               <div class="contact-item">
                 <strong>Horaires</strong>
-                À compléter
+                09:00 - 18:00 du lundi au vendredi
               </div>
               <div class="contact-item">
                 <strong>Téléphone</strong>
-                À compléter
+                <a href="tel:+33631392298">06 31 39 22 98</a>
               </div>
               <div class="contact-item">
                 <strong>Réservation</strong>
-                Lien Calendly / Fresha / Picktime à intégrer
+                <a class="btn btn-primary" href="https://wa.me/631392298" target="_blank">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
+                    <path d="M20.52 3.48A11.8 11.8 0 0012.02 0C5.38 0 .02 5.36.02 12c0 2.12.56 4.2 1.62 6.03L0 24l6.14-1.6A11.94 11.94 0 0012.02 24c6.64 0 12-5.36 12-12 0-3.2-1.25-6.21-3.5-8.52zM12.02 21.8c-1.9 0-3.75-.5-5.36-1.44l-.38-.22-3.64.95.97-3.54-.25-.37a9.7 9.7 0 01-1.52-5.18c0-5.36 4.36-9.72 9.72-9.72 2.6 0 5.04 1.01 6.87 2.85a9.65 9.65 0 012.85 6.87c0 5.36-4.36 9.72-9.72 9.72zm5.33-7.3c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.19.29-.76.94-.93 1.13-.17.19-.34.21-.63.07-.29-.14-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.66-1.6-.91-2.2-.24-.58-.48-.5-.66-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.44 0 1.44 1.02 2.84 1.16 3.04.14.19 2 3.05 4.84 4.27.68.29 1.21.46 1.63.59.68.22 1.3.19 1.79.11.55-.08 1.72-.7 1.96-1.37.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"/>n   
+                  </svg>WhatsApp
+                </a>
+                <a class="btn btn-secondary" href="https://ig.me/m/lapetitemaison.spa" target="_blank">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">n      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3.2A4.8 4.8 0 007.2 12 4.8 4.8 0 0012 16.8 4.8 4.8 0 0016.8 12 4.8 4.8 0 0012 7.2zm0 2A2.8 2.8 0 0114.8 12 2.8 2.8 0 0112 14.8 2.8 2.8 0 019.2 12 2.8 2.8 0 0112 9.2zm4.8-3.35a1.15 1.15 0 100 2.3 1.15 1.15 0 000-2.3z"/>
+                  </svg>Instagram
+                </a>
+
               </div>
             </div>
           </div>
